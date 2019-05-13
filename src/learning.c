@@ -5,7 +5,62 @@
 #include <string.h>
 #include <strings.h>
 #include <time.h>
+#define MAXLEN 256
 
+float angl_lichniy()
+{
+    clock_t start, stop;
+    float Min;
+    char* slovangl[9] = {"I", "You", "He", "She", "It", "We", "You", "They"};
+    char* slovrus[9] = {"Я", "Ты", "Он", "Она", "Оно", "Мы", "Вы", "Они"};
+    int i, n = 0, k = 0;
+    printf("   Личные местоимения.\n   Личные местоимения — местоимения, которые указывают на$
+    printf("\v\n      ------------------------\n");
+        for(i=0; i<8; i++){
+        printf("      | %-5s\t->\t%-5s|   \n", slovrus[i], slovangl[i]);}
+    printf("      ------------------------\v\n     Записали и запомнили?\n     Когда вы будет$
+    getchar();
+    system("clear");
+
+    char *mmm[9];
+    printf("        Подготовтесь к написанию иностранных слов!\n");
+    printf("        Нажмите клавишу \"ENTER\"");
+    getchar();
+    system("clear");
+    printf("Пишите с заглавной буквы!!!\n");
+    start = clock();
+    for(i=0; i<8; i++)
+    {
+        printf("    %s  = ", slovrus[i]);
+        mmm[i] = malloc(MAXLEN);
+        scanf("%s", mmm[i]);
+        printf("Правильный перевод:%s\n", slovangl[i]);
+    }
+    stop = clock();
+    Min = difftime (stop, start) / CLOCKS_PER_SEC;
+
+    printf("\nВы ввели данные слова:\n");
+    for(i=0; i<8; i++)
+    {
+        printf("%s\t->\tПравильно:%s\t = \tПеревод:%s\n",
+               mmm[i],
+               slovangl[i],
+               slovrus[i]);
+    }
+    for(i=0;i<8;i++)
+    {
+        if ((strcmp(mmm[i], slovangl[i])))
+            n = n + 1;
+        if ((!strcmp(mmm[i], slovangl[i])))
+            k = k + 1;
+    }
+    printf("Верных слов:%d\nНеверные слова:%d\n", k, n);
+    printf("Время написания слов: %f sec\n", Min);
+    for(i=0; i<8; i++)
+    free(mmm[i]);
+}
+
+//////////////////////////////////////////////////
 float nem_glagol()
 {
     char* slovanem[10] = {"Leben",
