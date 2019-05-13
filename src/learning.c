@@ -8,214 +8,245 @@
 
 float nem_glagol()
 {
-  char *slovanem[10] = {"Leben", "Schlafen", "Lesen", "Essen", "Arbeiten", "Wollen", "Konnen", "Lernen", "Gehen", "Denken"};
-  char *slovrus[10] = {"Жить", "Спать", "Читать", "Кушать", "Работать", "Хотеть", "Уметь", "Учиться", "Ходить", "Думать"};
-  int i, n = 0, k = 0;
-  printf("\n Глаголы- самостоятельная часть речи, которая обозначает состояние или действие предмета.\n В данном разделе глаголы будут представлены в ИНФИНИТИВЕ.\n");
-  printf("\v");
-  printf("\n      -----------------------------------\n");
-  for (i = 0; i < 10; i++) {
-    printf("      |%-8s     \t---> \t%-8s|   \n", slovrus[i], slovanem[i]);
-  }
-  printf("      -----------------------------------\v\n     Записали и запомнили?\n "
-         "    Когда вы будете готовы, нажмите клавишу \"ENTER\"");
-  getchar();
-  system("clear");
-  char *mmm[10];
-  printf("        Подготовтесь к написанию иностранных слов!\n");
-  printf("        Нажмите клавишу \"ENTER\"");
-  getchar();
-  system("clear");
-  printf("Пишите с заглавной буквы!!!\n");
-  clock_t start = clock();
-  for (i = 0; i < 10; i++) {
-    printf("    %s  = ", slovrus[i]);
-    mmm[i] = malloc(MAXLEN);
-    scanf("%s", mmm[i]);
-    printf("Правильный перевод:%s\n", slovanem[i]);
-  }
-  clock_t stop = clock();
-  double elapsed = (double)(stop - start) / CLOCKS_PER_SEC;
+    char* slovanem[10] = {"Leben",
+                          "Schlafen",
+                          "Lesen",
+                          "Essen",
+                          "Arbeiten",
+                          "Wollen",
+                          "Konnen",
+                          "Lernen",
+                          "Gehen",
+                          "Denken"};
+    char* slovrus[10] = {"Жить",
+                         "Спать",
+                         "Читать",
+                         "Кушать",
+                         "Работать",
+                         "Хотеть",
+                         "Уметь",
+                         "Учиться",
+                         "Ходить",
+                         "Думать"};
+    int i, n = 0, k = 0;
+    printf("\n Глаголы- самостоятельная часть речи, которая обозначает "
+           "состояние или действие предмета.\n В данном разделе глаголы будут "
+           "представлены в ИНФИНИТИВЕ.\n");
+    printf("\v");
+    printf("\n      -----------------------------------\n");
+    for (i = 0; i < 10; i++) {
+        printf("      |%-8s     \t---> \t%-8s|   \n", slovrus[i], slovanem[i]);
+    }
+    printf("      -----------------------------------\v\n     Записали и "
+           "запомнили?\n "
+           "    Когда вы будете готовы, нажмите клавишу \"ENTER\"");
+    getchar();
+    system("clear");
+    char* mmm[10];
+    printf("        Подготовтесь к написанию иностранных слов!\n");
+    printf("        Нажмите клавишу \"ENTER\"");
+    getchar();
+    system("clear");
+    printf("Пишите с заглавной буквы!!!\n");
+    clock_t start = clock();
+    for (i = 0; i < 10; i++) {
+        printf("    %s  = ", slovrus[i]);
+        mmm[i] = malloc(MAXLEN);
+        scanf("%s", mmm[i]);
+        printf("Правильный перевод:%s\n", slovanem[i]);
+    }
+    clock_t stop = clock();
+    double elapsed = (double)(stop - start) / CLOCKS_PER_SEC;
 
-  printf("\nВы ввели данные слова:\n");
-  for (i = 0; i < 10; i++) {
-    printf("%-8s\t->\tПравильно:%-8s\t = \tПеревод:%-10s\n", mmm[i], slovanem[i],
-           slovrus[i]);
-  }
-  for (i = 0; i < 10; i++) {
-    if ((strcmp(mmm[i], slovanem[i])))
-      n = n + 1;
-    if ((!strcmp(mmm[i], slovanem[i])))
-      k = k + 1;
-  }
-  printf("Верных слов:%d\nНеверные слова:%d\n", k, n);
-  printf("Время написания слов: %f min\n", elapsed);
-  for (i = 0; i < 10; i++)
-    free(mmm[i]);
+    printf("\nВы ввели данные слова:\n");
+    for (i = 0; i < 10; i++) {
+        printf("%-8s\t->\tПравильно:%-8s\t = \tПеревод:%-10s\n",
+               mmm[i],
+               slovanem[i],
+               slovrus[i]);
+    }
+    for (i = 0; i < 10; i++) {
+        if ((strcmp(mmm[i], slovanem[i])))
+            n = n + 1;
+        if ((!strcmp(mmm[i], slovanem[i])))
+            k = k + 1;
+    }
+    printf("Верных слов:%d\nНеверные слова:%d\n", k, n);
+    printf("Время написания слов: %f min\n", elapsed);
+    for (i = 0; i < 10; i++)
+        free(mmm[i]);
 }
 
 float nem_lichniy()
 {
-  char *slovanem[9] = {"Ich", "Du", "Er", "Sie", "Es", "Wir", "Ihr", "Sie"};
-  char *slovrus[9] = {"Я", "Ты", "Он", "Она", "Оно", "Мы", "Вы", "Они"};
-  char *sklon_po_pad_nem_dat[9] = {"Mir", "Dir", "Ihm",  "Ihr",
-                                   "Ihm", "Uns", "Euch", "Ihnen"};
-  char *sklon_po_pad_rus_dat[9] = {"Мне", "Тебе", "Ему", "Ей",
-                                   "Ему", "Нам",  "Вам", "Им"};
-  char *sklon_po_pad_nem_akk[9] = {"Mich", "Dich", "Ihn",  "Sie",
-                                   "Es",   "Uns",  "Euch", "Sie"};
-  char *sklon_po_pad_rus_akk[9] = {"Меня", "Тебя", "Его", "Ее",
-                                   "Его",  "Нас",  "Вас", "Их"};
-  char vibor[10]; //Для изучения склонения по падежам//
-  int i, n = 0, k = 0;
-  printf("   Личные местоимения.\n   Личные местоимения — местоимения, "
-         "которые указывают на предмет, но не называют его.\n   "
-         "Указывают на лиц, участвующих в речи.");
-  printf("\v\n              Normativ");
-  printf("\n      ------------------------\n");
-  for (i = 0; i < 8; i++) {
-    printf("      | %-5s\t->\t%-5s|   \n", slovrus[i], slovanem[i]);
-  }
-  printf("      ------------------------\v\n     Записали и запомнили?\n "
-         "    Когда вы будете готовы, нажмите клавишу \"ENTER\"");
-  getchar();
-  system("clear");
-  char *mmm[9];
-  printf("        Подготовтесь к написанию иностранных слов!\n");
-  printf("        Нажмите клавишу \"ENTER\"");
-  getchar();
-  system("clear");
-  printf("Пишите с заглавной буквы!!!\n");
-  clock_t start = clock();
-  for (i = 0; i < 8; i++) {
-    printf("    %s  = ", slovrus[i]);
-    mmm[i] = malloc(MAXLEN);
-    scanf("%s", mmm[i]);
-    printf("Правильный перевод:%s\n", slovanem[i]);
-  }
-  clock_t stop = clock();
-  double elapsed = (double)(stop - start) / CLOCKS_PER_SEC;
-
-  printf("\nВы ввели данные слова:\n");
-  for (i = 0; i < 8; i++) {
-    printf("%s\t->\tПравильно:%s\t = \tПеревод:%s\n", mmm[i], slovanem[i],
-           slovrus[i]);
-  }
-  for (i = 0; i < 8; i++) {
-    if ((strcmp(mmm[i], slovanem[i])))
-      n = n + 1;
-    if ((!strcmp(mmm[i], slovanem[i])))
-      k = k + 1;
-  }
-  printf("Верных слов:%d\nНеверные слова:%d\n", k, n);
-  printf("Время написания слов: %f min\n", elapsed);
-  for (i = 0; i < 8; i++)
-    free(mmm[i]);
-  printf("    Вы рассмотрели личные местоимения в именительном падеже\n  "
-         "  Вы можете изучить склоение личных местоимений в других "
-         "падежах\n    Для этого напишите:\"next\", для выхода введите "
-         "любой символ\n");
-  scanf("%s", vibor);
-  system("clear");
-  if (!strcmp(vibor, "next")) {
-    printf(" В немеком языке существует три падежа:\n Именительный- "
-           "Normativ\n Дательный- Dativ\n Родительный- Akkusativ\n Мы "
-           "с Вами рассмотрели склонение личного местоимения в "
-           "именительном падеже\n Сначала мы рассмотрим Dativ, после "
-           "Akkusativ\n");
-    printf("\v              Dativ\n");
-    printf("      ------------------------\n");
+    char* slovanem[9] = {"Ich", "Du", "Er", "Sie", "Es", "Wir", "Ihr", "Sie"};
+    char* slovrus[9] = {"Я", "Ты", "Он", "Она", "Оно", "Мы", "Вы", "Они"};
+    char* sklon_po_pad_nem_dat[9]
+            = {"Mir", "Dir", "Ihm", "Ihr", "Ihm", "Uns", "Euch", "Ihnen"};
+    char* sklon_po_pad_rus_dat[9]
+            = {"Мне", "Тебе", "Ему", "Ей", "Ему", "Нам", "Вам", "Им"};
+    char* sklon_po_pad_nem_akk[9]
+            = {"Mich", "Dich", "Ihn", "Sie", "Es", "Uns", "Euch", "Sie"};
+    char* sklon_po_pad_rus_akk[9]
+            = {"Меня", "Тебя", "Его", "Ее", "Его", "Нас", "Вас", "Их"};
+    char vibor[10]; //Для изучения склонения по падежам//
+    int i, n = 0, k = 0;
+    printf("   Личные местоимения.\n   Личные местоимения — местоимения, "
+           "которые указывают на предмет, но не называют его.\n   "
+           "Указывают на лиц, участвующих в речи.");
+    printf("\v\n              Normativ");
+    printf("\n      ------------------------\n");
     for (i = 0; i < 8; i++) {
-      printf("      | %-5s\t->\t%-5s|   \n", sklon_po_pad_rus_dat[i],
-             sklon_po_pad_nem_dat[i]);
+        printf("      | %-5s\t->\t%-5s|   \n", slovrus[i], slovanem[i]);
     }
-    printf("      ------------------------\v\n     Записали и "
-           "запомнили?\n     Когда вы будете готовы, нажмите клавишу "
-           "\"ENTER\"\n");
-    getchar();
+    printf("      ------------------------\v\n     Записали и запомнили?\n "
+           "    Когда вы будете готовы, нажмите клавишу \"ENTER\"");
     getchar();
     system("clear");
-    printf("        Подготовьтесь к написанию иностранных слов!\n");
+    char* mmm[9];
+    printf("        Подготовтесь к написанию иностранных слов!\n");
     printf("        Нажмите клавишу \"ENTER\"");
     getchar();
     system("clear");
     printf("Пишите с заглавной буквы!!!\n");
-    clock_t start1 = clock();
+    clock_t start = clock();
     for (i = 0; i < 8; i++) {
-      printf("    %s  = ", sklon_po_pad_rus_dat[i]);
-      mmm[i] = malloc(MAXLEN);
-      scanf("%s", mmm[i]);
-      printf("Правильный перевод:%s\n", sklon_po_pad_nem_dat[i]);
+        printf("    %s  = ", slovrus[i]);
+        mmm[i] = malloc(MAXLEN);
+        scanf("%s", mmm[i]);
+        printf("Правильный перевод:%s\n", slovanem[i]);
     }
-    clock_t stop1 = clock();
-    double elapsed1 = (double)(stop1 - start1) / CLOCKS_PER_SEC;
-    printf("\nВы ввели данные слова:\n");
-    for (i = 0; i < 8; i++) {
-      printf("%s\t->\tПравильно:%s\t = \tПеревод:%s\n", mmm[i],
-             sklon_po_pad_nem_dat[i], sklon_po_pad_rus_dat[i]);
-    }
-    n = 0;
-    k = 0;
-    for (i = 0; i < 8; i++) {
-      if ((strcmp(mmm[i], sklon_po_pad_nem_dat[i])))
-        n = n + 1;
-      if ((!strcmp(mmm[i], sklon_po_pad_nem_dat[i])))
-        k = k + 1;
-    }
-    printf("Верных слов:%d\nНеверные слова:%d\n", k, n);
-    printf("Время написания слов: %f min\n", elapsed1);
+    clock_t stop = clock();
+    double elapsed = (double)(stop - start) / CLOCKS_PER_SEC;
 
-    for (i = 0; i < 8; i++)
-      free(mmm[i]);
-    getchar();
-    getchar();
-    system("clear");
-    ///////////////////////////////////////////////////////////////////////////////////
-    printf(" Пришло время изучить личные местоимения в склоение "
-           "Akkusativ\n");
-    printf("\v              Akkusativ\n      "
-           "------------------------\n");
-    for (i = 0; i < 8; i++) {
-      printf("      | %-5s\t->\t%-5s|   \n", sklon_po_pad_rus_akk[i],
-             sklon_po_pad_nem_akk[i]);
-    }
-    printf("      ------------------------\v\n     Записали и "
-           "запомнили?\n     Когда вы будете готовы, нажмите клавишу "
-           "\"ENTER\"\n");
-    getchar();
-    system("clear");
-    printf("        Подготовьтесь к написанию иностранных слов!\n");
-    printf("        Нажмите клавишу \"ENTER\"");
-    getchar();
-    system("clear");
-    printf("Пишите с заглавной буквы!!!\n");
-    clock_t start2 = clock();
-    for (i = 0; i < 8; i++) {
-      printf("    %s  = ", sklon_po_pad_rus_akk[i]);
-      mmm[i] = malloc(MAXLEN);
-      scanf("%s", mmm[i]);
-      printf("Правильный перевод:%s\n", sklon_po_pad_nem_akk[i]);
-    }
-    clock_t stop2 = clock();
-    double elapsed2 = (double)(stop2 - start2) / CLOCKS_PER_SEC;
     printf("\nВы ввели данные слова:\n");
     for (i = 0; i < 8; i++) {
-      printf("%s\t->\tПравильно:%s\t = \tПеревод:%s\n", mmm[i],
-             sklon_po_pad_nem_akk[i], sklon_po_pad_rus_akk[i]);
+        printf("%s\t->\tПравильно:%s\t = \tПеревод:%s\n",
+               mmm[i],
+               slovanem[i],
+               slovrus[i]);
     }
-    n = 0;
-    k = 0;
     for (i = 0; i < 8; i++) {
-      if ((strcmp(mmm[i], sklon_po_pad_nem_akk[i])))
-        n = n + 1;
-      if ((!strcmp(mmm[i], sklon_po_pad_nem_akk[i])))
-        k = k + 1;
+        if ((strcmp(mmm[i], slovanem[i])))
+            n = n + 1;
+        if ((!strcmp(mmm[i], slovanem[i])))
+            k = k + 1;
     }
     printf("Верных слов:%d\nНеверные слова:%d\n", k, n);
-    printf("Время написания слов: %f min\n", elapsed2);
+    printf("Время написания слов: %f min\n", elapsed);
     for (i = 0; i < 8; i++)
-      free(mmm[i]);
-  }
+        free(mmm[i]);
+    printf("    Вы рассмотрели личные местоимения в именительном падеже\n  "
+           "  Вы можете изучить склоение личных местоимений в других "
+           "падежах\n    Для этого напишите:\"next\", для выхода введите "
+           "любой символ\n");
+    scanf("%s", vibor);
+    system("clear");
+    if (!strcmp(vibor, "next")) {
+        printf(" В немеком языке существует три падежа:\n Именительный- "
+               "Normativ\n Дательный- Dativ\n Родительный- Akkusativ\n Мы "
+               "с Вами рассмотрели склонение личного местоимения в "
+               "именительном падеже\n Сначала мы рассмотрим Dativ, после "
+               "Akkusativ\n");
+        printf("\v              Dativ\n");
+        printf("      ------------------------\n");
+        for (i = 0; i < 8; i++) {
+            printf("      | %-5s\t->\t%-5s|   \n",
+                   sklon_po_pad_rus_dat[i],
+                   sklon_po_pad_nem_dat[i]);
+        }
+        printf("      ------------------------\v\n     Записали и "
+               "запомнили?\n     Когда вы будете готовы, нажмите клавишу "
+               "\"ENTER\"\n");
+        getchar();
+        getchar();
+        system("clear");
+        printf("        Подготовьтесь к написанию иностранных слов!\n");
+        printf("        Нажмите клавишу \"ENTER\"");
+        getchar();
+        system("clear");
+        printf("Пишите с заглавной буквы!!!\n");
+        clock_t start1 = clock();
+        for (i = 0; i < 8; i++) {
+            printf("    %s  = ", sklon_po_pad_rus_dat[i]);
+            mmm[i] = malloc(MAXLEN);
+            scanf("%s", mmm[i]);
+            printf("Правильный перевод:%s\n", sklon_po_pad_nem_dat[i]);
+        }
+        clock_t stop1 = clock();
+        double elapsed1 = (double)(stop1 - start1) / CLOCKS_PER_SEC;
+        printf("\nВы ввели данные слова:\n");
+        for (i = 0; i < 8; i++) {
+            printf("%s\t->\tПравильно:%s\t = \tПеревод:%s\n",
+                   mmm[i],
+                   sklon_po_pad_nem_dat[i],
+                   sklon_po_pad_rus_dat[i]);
+        }
+        n = 0;
+        k = 0;
+        for (i = 0; i < 8; i++) {
+            if ((strcmp(mmm[i], sklon_po_pad_nem_dat[i])))
+                n = n + 1;
+            if ((!strcmp(mmm[i], sklon_po_pad_nem_dat[i])))
+                k = k + 1;
+        }
+        printf("Верных слов:%d\nНеверные слова:%d\n", k, n);
+        printf("Время написания слов: %f min\n", elapsed1);
+
+        for (i = 0; i < 8; i++)
+            free(mmm[i]);
+        getchar();
+        getchar();
+        system("clear");
+        ///////////////////////////////////////////////////////////////////////////////////
+        printf(" Пришло время изучить личные местоимения в склоение "
+               "Akkusativ\n");
+        printf("\v              Akkusativ\n      "
+               "------------------------\n");
+        for (i = 0; i < 8; i++) {
+            printf("      | %-5s\t->\t%-5s|   \n",
+                   sklon_po_pad_rus_akk[i],
+                   sklon_po_pad_nem_akk[i]);
+        }
+        printf("      ------------------------\v\n     Записали и "
+               "запомнили?\n     Когда вы будете готовы, нажмите клавишу "
+               "\"ENTER\"\n");
+        getchar();
+        system("clear");
+        printf("        Подготовьтесь к написанию иностранных слов!\n");
+        printf("        Нажмите клавишу \"ENTER\"");
+        getchar();
+        system("clear");
+        printf("Пишите с заглавной буквы!!!\n");
+        clock_t start2 = clock();
+        for (i = 0; i < 8; i++) {
+            printf("    %s  = ", sklon_po_pad_rus_akk[i]);
+            mmm[i] = malloc(MAXLEN);
+            scanf("%s", mmm[i]);
+            printf("Правильный перевод:%s\n", sklon_po_pad_nem_akk[i]);
+        }
+        clock_t stop2 = clock();
+        double elapsed2 = (double)(stop2 - start2) / CLOCKS_PER_SEC;
+        printf("\nВы ввели данные слова:\n");
+        for (i = 0; i < 8; i++) {
+            printf("%s\t->\tПравильно:%s\t = \tПеревод:%s\n",
+                   mmm[i],
+                   sklon_po_pad_nem_akk[i],
+                   sklon_po_pad_rus_akk[i]);
+        }
+        n = 0;
+        k = 0;
+        for (i = 0; i < 8; i++) {
+            if ((strcmp(mmm[i], sklon_po_pad_nem_akk[i])))
+                n = n + 1;
+            if ((!strcmp(mmm[i], sklon_po_pad_nem_akk[i])))
+                k = k + 1;
+        }
+        printf("Верных слов:%d\nНеверные слова:%d\n", k, n);
+        printf("Время написания слов: %f min\n", elapsed2);
+        for (i = 0; i < 8; i++)
+            free(mmm[i]);
+    }
 }
 ///функция англицкий язык///
 float angl()
