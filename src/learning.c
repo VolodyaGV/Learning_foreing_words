@@ -245,7 +245,64 @@ float angl_fructoovosh()
     free(mmm[i]);
 }
 //////////////////////////////////////////////////
+float angl_edainapitok()
+{
+        clock_t start, stop;
+        float Min;
+    char *slovangl[12]={"Juice", "Porridge", "Soup", "Compote", "Kisselt", "Yogurt", "Cottage cheese","Stew","cake","Candies","Steak"};
+        char *slovrus[12]={"Сок", "Каша", "Суп", "Компот", "Кисель", "Йогурт","Творог","Рагу","Торт","Конфеты","Стейк"};
+        int i, n=0, k=0;
+   printf("   Пища — то, что едят, чем питаются — любое вещество, пригодное для еды и питья живым организмам для пополнения запасов энергии"
+  " и необходимых ингредиентов для нормального течения химических реакций обмена веществ: белков, жиров, углеводов"
+  ", витаминов, минералов и микроэлементов.\n");
+    printf("\v\n      |-----------------------------------|\n");
+	for(i=0; i<11; i++) {
+		if (slovrus[i]=="Конфеты") {
+            printf("      | %-10s\t->\t%-10s|       \n", slovrus[i], slovangl[i]);
+            i++;
+        }
 
+		printf("      | %-10s\t\t->\t%-10s|   \n", slovrus[i], slovangl[i]);
+	}
+    printf("      |-----------------------------------|\v\n     Записали и запомнили?\n     Когда вы будете готовы, нажмите клавишу \"ENTER\"");
+    getchar();
+    system("clear");
+    char *mmm[12];
+    printf("        Подготовтесь к написанию иностранных слов!\n");
+    printf("        Нажмите клавишу \"ENTER\"");
+    getchar();
+    system("clear");
+    printf("Пишите с заглавной буквы!!!\n");
+    start = clock();
+    for(i=0; i<11; i++)
+    {
+        printf("    %s  = ",slovrus[i]);
+        mmm[i]= malloc(MAXLEN);
+        scanf("%s", mmm[i]);
+        printf("Правильный перевод:%s\n", slovangl[i]);
+    }
+    stop = clock();
+    Min = difftime (stop, start) / CLOCKS_PER_SEC;
+    
+    printf("\nВы ввели данные слова:\n");
+    for(i=0; i<11; i++)
+    {
+        printf("%s\t->\tПравильно:%s\t = \tПеревод:%s\n", mmm[i], slovangl[i], slovrus[i]);
+    }
+    for(i=0;i<11;i++)
+
+
+    {
+        if((strcmp(mmm[i], slovangl[i])))
+        n=n+1;
+        if((!strcmp(mmm[i], slovangl[i])))
+        k=k+1;
+    }
+    printf("Верных слов:%d\nНеверные слова:%d\n", k, n);
+    printf("Время написания слов: %f sec\n", Min);
+    for(i=0; i<11; i++)
+    free(mmm[i]);
+}
 //////////////////////////////////////////////////
 float nem_glagol()
 {
