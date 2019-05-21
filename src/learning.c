@@ -7,6 +7,75 @@
 #include <time.h>
 #define MAXLEN 256
 
+float nem_edainapitok()
+{
+    char* slovanem[10] = {"Suppe",
+                          "Brod",
+                          "Milch",
+                          "Saft",
+                          "Butter",
+                          "Brei",
+                          "Kuchenr",
+                          "Kase",
+                          "Tee",
+                          "Wasser"};
+    char* slovrus[10] = {"Суп",
+                         "Хлеб",
+                         "Молоко",
+                         "Сок",
+                         "Масло",
+                         "Каша",
+                         "Пирог",
+                         "Сыр",
+                         "Чай",
+                         "Вода"};
+    int i, n = 0, k = 0;
+    printf("\n                     Еда и напитки.");
+    printf("\v");
+    printf("\n      ----------------------------------------\n");
+    for (i = 0; i < 10; i++) {
+        printf("      |%-8s     \t---> \t%-13s|   \n", slovrus[i], slovanem[i]);
+    }
+    printf("      ----------------------------------------\v\n     Записали и "
+           "запомнили?\n "
+           "    Когда вы будете готовы, нажмите клавишу \"ENTER\"");
+    getchar();
+    system("clear");
+    char* mmm[10];
+    printf("        Подготовтесь к написанию иностранных слов!\n");
+    printf("        Нажмите клавишу \"ENTER\"");
+    getchar();
+    system("clear");
+    printf("Пишите с заглавной буквы!!!\n");
+    clock_t start = clock();
+    for (i = 0; i < 10; i++) {
+        printf("    %s  = ", slovrus[i]);
+        mmm[i] = malloc(MAXLEN);
+        scanf("%s", mmm[i]);
+        printf("Правильный перевод:%s\n", slovanem[i]);
+    }
+    clock_t stop = clock();
+    double elapsed = (double)(stop - start) / CLOCKS_PER_SEC;
+
+    printf("\nВы ввели данные слова:\n");
+    for (i = 0; i < 10; i++) {
+        printf("%-8s\t->\tПравильно:%-8s\t = \tПеревод:%-10s\n",
+               mmm[i],
+               slovanem[i],
+               slovrus[i]);
+    }
+    for (i = 0; i < 10; i++) {
+        if ((strcmp(mmm[i], slovanem[i])))
+            n = n + 1;
+        if ((!strcmp(mmm[i], slovanem[i])))
+            k = k + 1;
+    }
+    printf("Верных слов:%d\nНеверные слова:%d\n", k, n);
+    printf("Время написания слов: %f min\n", elapsed);
+    for (i = 0; i < 10; i++)
+        free(mmm[i]);
+}
+
 float nem_semiya()
 {
     char* slovanem[10] = {"Vater",
