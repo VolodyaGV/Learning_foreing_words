@@ -74,6 +74,7 @@ float nem_prilagat()
     printf("Время написания слов: %f min\n", elapsed);
     for (i = 0; i < 10; i++)
         free(mmm[i]);
+    return 0;
 }
 
 float nem_zhivotn()
@@ -143,6 +144,7 @@ float nem_zhivotn()
     printf("Время написания слов: %f min\n", elapsed);
     for (i = 0; i < 10; i++)
         free(mmm[i]);
+return 0;
 }
 
 float angl_lichniy()
@@ -197,6 +199,7 @@ float angl_lichniy()
         for (i = 0; i < 8; i++)
             free(mmm[i]);
     }
+    return 0;
 }
 
 float nem_pogoda()
@@ -266,6 +269,7 @@ float nem_pogoda()
     printf("Время написания слов: %f min\n", elapsed);
     for (i = 0; i < 10; i++)
         free(mmm[i]);
+    return 0;
 }
 
 float angl_glagol()
@@ -342,6 +346,7 @@ float angl_glagol()
     printf("Время написания слов: %f sec\n", Min);
     for (i = 0; i < 10; i++)
         free(mmm[i]);
+    return 0;
 }
 
 float nem_priroda()
@@ -411,6 +416,7 @@ float nem_priroda()
     printf("Время написания слов: %f min\n", elapsed);
     for (i = 0; i < 10; i++)
         free(mmm[i]);
+    return 0;
 }
 
 float angl_semiya()
@@ -508,6 +514,7 @@ float angl_semiya()
     printf("Время написания слов: %f sec\n", Min);
     for (i = 0; i < 11; i++)
         free(mmm[i]);
+    return 0;
 }
 
 float nem_edainapitok()
@@ -577,6 +584,7 @@ float nem_edainapitok()
     printf("Время написания слов: %f min\n", elapsed);
     for (i = 0; i < 10; i++)
         free(mmm[i]);
+    return 0;
 }
 
 float angl_fructoovosh()
@@ -667,6 +675,7 @@ float angl_fructoovosh()
     printf("Время написания слов: %f sec\n", Min);
     for (i = 0; i < 10; i++)
         free(mmm[i]);
+    return 0;
 }
 
 float nem_semiya()
@@ -736,6 +745,7 @@ float nem_semiya()
     printf("Время написания слов: %f min\n", elapsed);
     for (i = 0; i < 10; i++)
         free(mmm[i]);
+    return 0;
 }
 
 float nem_zveta()
@@ -805,6 +815,7 @@ float nem_zveta()
     printf("Время написания слов: %f min\n", elapsed);
     for (i = 0; i < 10; i++)
         free(mmm[i]);
+    return 0;
 }
 
 float angl_edainapitok()
@@ -889,9 +900,10 @@ float angl_edainapitok()
     printf("Время написания слов: %f sec\n", Min);
     for (i = 0; i < 11; i++)
         free(mmm[i]);
+    return 0;
 }
 
-float nem_fructoovosh();
+float nem_fructoovosh()
 {
     char* slovanem[10] = {"Apfel",
                           "Kurbis",
@@ -958,6 +970,7 @@ float nem_fructoovosh();
     printf("Время написания слов: %f min\n", elapsed);
     for (i = 0; i < 10; i++)
         free(mmm[i]);
+    return 0;
 }
 
 float angl_priroda()
@@ -1050,6 +1063,7 @@ float angl_priroda()
     printf("Время написания слов: %f sec\n", Min);
     for (i = 0; i < 12; i++)
         free(mmm[i]);
+    return 0;
 }
 
 float nem_glagol()
@@ -1121,6 +1135,7 @@ float nem_glagol()
     printf("Время написания слов: %f min\n", elapsed);
     for (i = 0; i < 10; i++)
         free(mmm[i]);
+    return 0;
 }
 
 float nem_lichniy()
@@ -1293,6 +1308,7 @@ float nem_lichniy()
         for (i = 0; i < 8; i++)
             free(mmm[i]);
     }
+    return 0;
 }
 ///функция англицкий язык///
 float angl()
@@ -1395,6 +1411,7 @@ float angl()
         }
         printf("Вот и всё)))\n");
     }
+    return 0;
 }
 /////функция немецкий язык//////
 float nem()
@@ -1486,4 +1503,5 @@ float nem()
         }
     }
     printf("Вот и всё)))\n");
+    return 0;
 }
