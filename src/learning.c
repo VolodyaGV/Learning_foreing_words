@@ -7,6 +7,287 @@
 #include <time.h>
 #define MAXLEN 256
 
+float angl_pogoda()
+{
+    char* slovangl[10] = {"Blue",
+                          "Blue",
+                          "Rad",
+                          "Black",
+                          "White",
+                          "Yellow",
+                          "Orange",
+                          "Green",
+                          "Violet",
+                          "Brown"};
+    char* slovrus[10] = {"Синий",
+                         "Голубой",
+                         "Красный",
+                         "Черный",
+                         "Белый",
+                         "Желтый",
+                         "Оранжевый",
+                         "Зеленный",
+                         "Фиолетовый",
+                         "Коричневый"};
+    int i, n = 0, k = 0;
+    printf("\n                     Цвета");
+    printf("\v");
+    printf("\n      ----------------------------------------\n");
+    for (i = 0; i < 10; i++) {
+        printf("      |%-8s     \t---> \t%-13s|   \n", slovrus[i], slovangl[i]);
+    }
+    printf("      ----------------------------------------\v\n     Записали и "
+           "запомнили?\n "
+           "    Когда вы будете готовы, нажмите клавишу \"ENTER\"");
+    getchar();
+    system("clear");
+    char* mmm[10];
+    printf("        Подготовтесь к написанию иностранных слов!\n");
+    printf("        Нажмите клавишу \"ENTER\"");
+    getchar();
+    system("clear");
+    printf("Пишите с заглавной буквы!!!\n");
+    clock_t start = clock();
+    for (i = 0; i < 10; i++) {
+        printf("    %s  = ", slovrus[i]);
+        mmm[i] = malloc(MAXLEN);
+        scanf("%s", mmm[i]);
+        printf("Правильный перевод:%s\n", slovangl[i]);
+    }
+    clock_t stop = clock();
+    double elapsed = (double)(stop - start) / CLOCKS_PER_SEC;
+
+    printf("\nВы ввели данные слова:\n");
+    for (i = 0; i < 10; i++) {
+        printf("%-8s\t->\tПравильно:%-8s\t = \tПеревод:%-10s\n",
+               mmm[i],
+               slovangl[i],
+               slovrus[i]);
+    }
+    for (i = 0; i < 10; i++) {
+        if ((strcmp(mmm[i], slovangl[i])))
+            n = n + 1;
+        if ((!strcmp(mmm[i], slovangl[i])))
+            k = k + 1;
+    }
+    printf("Верных слов:%d\nНеверные слова:%d\n", k, n);
+    printf("Время написания слов: %f min\n", elapsed);
+    for (i = 0; i < 10; i++)
+        free(mmm[i]);
+    return 0;
+}
+
+float angl_pogoda()
+{
+    char* slovangl[10] = {"Sunny",
+                          "Fog",
+                          "Rain",
+                          "Snow",
+                          "Hail",
+                          "Heat",
+                          "Dampness",
+                          "Wind",
+                          "Thunderstorm",
+                          "Weather"};
+    char* slovrus[10] = {"Солнце",
+                         "Туман",
+                         "Дождь",
+                         "Снег",
+                         "Град",
+                         "Жара",
+                         "Сырость",
+                         "Ветер",
+                         "Гроза",
+                         "Погода"};
+    int i, n = 0, k = 0;
+    printf("\n                     Погода");
+    printf("\v");
+    printf("\n      ----------------------------------------\n");
+    for (i = 0; i < 10; i++) {
+        printf("      |%-8s     \t---> \t%-13s|   \n", slovrus[i], slovangl[i]);
+    }
+    printf("      ----------------------------------------\v\n     Записали и "
+           "запомнили?\n "
+           "    Когда вы будете готовы, нажмите клавишу \"ENTER\"");
+    getchar();
+    system("clear");
+    char* mmm[10];
+    printf("        Подготовтесь к написанию иностранных слов!\n");
+    printf("        Нажмите клавишу \"ENTER\"");
+    getchar();
+    system("clear");
+    printf("Пишите с заглавной буквы!!!\n");
+    clock_t start = clock();
+    for (i = 0; i < 10; i++) {
+        printf("    %s  = ", slovrus[i]);
+        mmm[i] = malloc(MAXLEN);
+        scanf("%s", mmm[i]);
+        printf("Правильный перевод:%s\n", slovangl[i]);
+    }
+    clock_t stop = clock();
+    double elapsed = (double)(stop - start) / CLOCKS_PER_SEC;
+
+    printf("\nВы ввели данные слова:\n");
+    for (i = 0; i < 10; i++) {
+        printf("%-8s\t->\tПравильно:%-8s\t = \tПеревод:%-10s\n",
+               mmm[i],
+               slovangl[i],
+               slovrus[i]);
+    }
+    for (i = 0; i < 10; i++) {
+        if ((strcmp(mmm[i], slovangl[i])))
+            n = n + 1;
+        if ((!strcmp(mmm[i], slovangl[i])))
+            k = k + 1;
+    }
+    printf("Верных слов:%d\nНеверные слова:%d\n", k, n);
+    printf("Время написания слов: %f min\n", elapsed);
+    for (i = 0; i < 10; i++)
+        free(mmm[i]);
+    return 0;
+}
+
+float angl_zhivotn()
+{
+    char* slovangl[10] = {"Animals",
+                          "Hare",
+                          "Elephant",
+                          "Dog",
+                          "Cat",
+                          "Cow",
+                          "Pig",
+                          "Crocodile",
+                          "Mouse",
+                          "Sheep"};
+    char* slovrus[10] = {"Животные",
+                         "Заяц",
+                         "Слон",
+                         "Собака",
+                         "Кошка",
+                         "Корова",
+                         "Свинья",
+                         "Крокодил",
+                         "Мышь",
+                         "Овца"};
+    int i, n = 0, k = 0;
+    printf("\n                     Животные");
+    printf("\v");
+    printf("\n      ----------------------------------------\n");
+    for (i = 0; i < 10; i++) {
+        printf("      |%-8s     \t---> \t%-13s|   \n", slovrus[i], slovangl[i]);
+    }
+    printf("      ----------------------------------------\v\n     Записали и "
+           "запомнили?\n "
+           "    Когда вы будете готовы, нажмите клавишу \"ENTER\"");
+    getchar();
+    system("clear");
+    char* mmm[10];
+    printf("        Подготовтесь к написанию иностранных слов!\n");
+    printf("        Нажмите клавишу \"ENTER\"");
+    getchar();
+    system("clear");
+    printf("Пишите с заглавной буквы!!!\n");
+    clock_t start = clock();
+    for (i = 0; i < 10; i++) {
+        printf("    %s  = ", slovrus[i]);
+        mmm[i] = malloc(MAXLEN);
+        scanf("%s", mmm[i]);
+        printf("Правильный перевод:%s\n", slovangl[i]);
+    }
+    clock_t stop = clock();
+    double elapsed = (double)(stop - start) / CLOCKS_PER_SEC;
+
+    printf("\nВы ввели данные слова:\n");
+    for (i = 0; i < 10; i++) {
+        printf("%-8s\t->\tПравильно:%-8s\t = \tПеревод:%-10s\n",
+               mmm[i],
+               slovangl[i],
+               slovrus[i]);
+    }
+    for (i = 0; i < 10; i++) {
+        if ((strcmp(mmm[i], slovangl[i])))
+            n = n + 1;
+        if ((!strcmp(mmm[i], slovangl[i])))
+            k = k + 1;
+    }
+    printf("Верных слов:%d\nНеверные слова:%d\n", k, n);
+    printf("Время написания слов: %f min\n", elapsed);
+    for (i = 0; i < 10; i++)
+        free(mmm[i]);
+    return 0;
+}
+
+float angl_prilag()
+{
+    char* slovangl[10] = {"Big",
+                          "Nice",
+                          "Bad",
+                          "Small",
+                          "Long",
+                          "Thick",
+                          "Delicious",
+                          "Smart",
+                          "Funny",
+                          "Sick"};
+    char* slovrus[10] = {"Большой",
+                         "Красивый",
+                         "Плохой",
+                         "Маленький",
+                         "Длинный",
+                         "Толстый",
+                         "Вкусный",
+                         "Умный",
+                         "Смешной",
+                         "Больной"};
+    int i, n = 0, k = 0;
+    printf("\n                     Прилательные-самостоятельная часть речи, "
+           "обозначающая непроцессуальный признак предмета");
+    printf("\v");
+    printf("\n      ----------------------------------------\n");
+    for (i = 0; i < 10; i++) {
+        printf("      |%-8s     \t---> \t%-13s|   \n", slovrus[i], slovangl[i]);
+    }
+    printf("      ----------------------------------------\v\n     Записали и "
+           "запомнили?\n "
+           "    Когда вы будете готовы, нажмите клавишу \"ENTER\"");
+    getchar();
+    system("clear");
+    char* mmm[10];
+    printf("        Подготовтесь к написанию иностранных слов!\n");
+    printf("        Нажмите клавишу \"ENTER\"");
+    getchar();
+    system("clear");
+    printf("Пишите с заглавной буквы!!!\n");
+    clock_t start = clock();
+    for (i = 0; i < 10; i++) {
+        printf("    %s  = ", slovrus[i]);
+        mmm[i] = malloc(MAXLEN);
+        scanf("%s", mmm[i]);
+        printf("Правильный перевод:%s\n", slovangl[i]);
+    }
+    clock_t stop = clock();
+    double elapsed = (double)(stop - start) / CLOCKS_PER_SEC;
+
+    printf("\nВы ввели данные слова:\n");
+    for (i = 0; i < 10; i++) {
+        printf("%-8s\t->\tПравильно:%-8s\t = \tПеревод:%-10s\n",
+               mmm[i],
+               slovangl[i],
+               slovrus[i]);
+    }
+    for (i = 0; i < 10; i++) {
+        if ((strcmp(mmm[i], slovangl[i])))
+            n = n + 1;
+        if ((!strcmp(mmm[i], slovangl[i])))
+            k = k + 1;
+    }
+    printf("Верных слов:%d\nНеверные слова:%d\n", k, n);
+    printf("Время написания слов: %f min\n", elapsed);
+    for (i = 0; i < 10; i++)
+        free(mmm[i]);
+    return 0;
+}
+
 float nem_prilagat()
 {
     char* slovanem[10] = {"Gross",
@@ -30,7 +311,8 @@ float nem_prilagat()
                          "Смешной",
                          "Больной"};
     int i, n = 0, k = 0;
-    printf("\n                     Прилательные.");
+    printf("\n                     Прилательные-самостоятельная часть речи, "
+           "обозначающая непроцессуальный признак предмета");
     printf("\v");
     printf("\n      ----------------------------------------\n");
     for (i = 0; i < 10; i++) {
@@ -144,7 +426,7 @@ float nem_zhivotn()
     printf("Время написания слов: %f min\n", elapsed);
     for (i = 0; i < 10; i++)
         free(mmm[i]);
-return 0;
+    return 0;
 }
 
 float angl_lichniy()
@@ -1259,8 +1541,8 @@ float nem_lichniy()
         getchar();
         getchar();
         system("clear");
-        ///////////////////////////////////////////////////////////////////////////////////
-        printf(" Пришло время изучить личные местоимения в склоение "
+        ////
+        printf(" Пришло время изучить личные местоимения в склонение "
                "Akkusativ\n");
         printf("\v              Akkusativ\n      "
                "------------------------\n");
