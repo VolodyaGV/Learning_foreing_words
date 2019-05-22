@@ -1637,7 +1637,7 @@ float angl()
         angl_zhivotn();
         break;
     case 10:
-        angl_prilagat();
+        angl_prilag();
         break;
     default:
         printf("Ошибочка\n");
@@ -1683,7 +1683,7 @@ float angl()
             angl_zhivotn();
             break;
         case 10:
-            angl_prilagat();
+            angl_prilag();
             break;
         case 0:
             exit(0);
