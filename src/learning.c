@@ -7,7 +7,7 @@
 #include <time.h>
 #define MAXLEN 256
 
-float angl_pogoda()
+float angl_zveta()
 {
     char* slovangl[10] = {"Blue",
                           "Blue",
