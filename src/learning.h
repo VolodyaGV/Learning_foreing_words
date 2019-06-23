@@ -22,9 +22,9 @@ float nem_fructoovosh();
 float angl_priroda();
 float nem_glagol();
 float nem_lichniy();
-void ANGL();
+void ANGL ();
 float angl();
-void NEM();
+void NEM ();
 float nem();
 
 #endif
