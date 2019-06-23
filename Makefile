@@ -5,39 +5,31 @@ clean:
 	-rm -f bin/main build/src/*.o
 	-rm -f bin/testing build/test/*.o
 
-bin/main: build/src/main.o build/src/geometry.o build/src/parser.o
+bin/main: build/src/main.o build/src/learning.o
 
-	gcc -Wall -Werror build/src/main.o build/src/geometry.o build/src/parser.o -o bin/main -lm
+	gcc -Wall -Werror build/src/main.o build/src/learning.o -o bin/main -lm
 
 build/src/main.o: src/main.c
 
 	gcc -Wall -Werror -c src/main.c -o build/src/main.o
 
-build/src/geometry.o: src/geometry.c
+build/src/learning.o: src/learning.c
 
-	gcc -Wall -Werror -c src/geometry.c -o build/src/geometry.o
-
-build/src/parser.o: src/parser.c
-
-	gcc -Wall -Werror -c src/parser.c -o build/src/parser.o
+	gcc -Wall -Werror -c src/learning.c -o build/src/learning.o
 
 
 
-bin/testing: build/test/main.o build/test/geometry_test.o build/test/parser_test.o build/src/geometry.o build/src/parser.o
+bin/testing: build/test/main.o build/test/learning_test.o build/src/learning.o
 
-		gcc build/test/main.o build/test/geometry_test.o build/test/parser_test.o build/src/geometry.o build/src/parser.o -o bin/testing -lm -std=c11
+		gcc -Wall -Werror build/test/main.o build/test/learning_test.o build/src/learning.o -o bin/testing -lm
 
 build/test/main.o: test/main.c
 
-		gcc -I thirdparty src -c test/main.c -o build/test/main.o lm -std=c11
+		gcc -Wall -Werror -c test/main.c -o build/test/main.o
 
-build/test/geometry_test.o: test/geometry_test.c
+build/test/learning_test.o: test/learning_test.c
 
-		gcc -I thirdparty src -c test/geometry_test.c -o build/test/geometry_test.o lm -std=c11
-
-build/test/parser_test.o: test/parser_test.c
-
-		gcc -I thirdparty src -c test/parser_test.c -o build/test/parser_test.o lm -std=c11
+		gcc -Wall -Werror -c test/learning_test.c -o build/test/learning_test.o
 
 bin:
 	mkdir bin
