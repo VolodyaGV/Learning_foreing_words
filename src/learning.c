@@ -12,7 +12,7 @@ double wtime()
     return (double)t.tv_sec + (double)t.tv_usec * 1E-6;
 }
 
-float angl_zveta()
+float angl_zveta(char name[20])
 {
     char* slovangl[10] = {"Blue",
                           "Blue",
@@ -79,14 +79,17 @@ float angl_zveta()
         if ((!strcmp(mmm[i], slovangl[i])))
             k = k + 1;
     }
-    printf("Верных слов:%d\nНеверные слова:%d\n", k, n);
+    printf("Итак, %s, вот ваш результат:\nВерных слов:%d\nНеверные слова:%d\n",
+           name,
+           k,
+           n);
     printf("Минуты %d\nСекунды %2.0d \n", min, sec);
     for (i = 0; i < 10; i++)
         free(mmm[i]);
     return 0;
 }
 
-float angl_pogoda()
+float angl_pogoda(char name[20])
 {
     char* slovangl[10] = {"Sunny",
                           "Fog",
@@ -154,14 +157,17 @@ float angl_pogoda()
         if ((!strcmp(mmm[i], slovangl[i])))
             k = k + 1;
     }
-    printf("Верных слов:%d\nНеверные слова:%d\n", k, n);
+    printf("Итак, %s, вот ваш результат:\nВерных слов:%d\nНеверные слова:%d\n",
+           name,
+           k,
+           n);
     printf("Время написания:\nМинуты %d\nСекунды %2.0d \n", min, sec);
     for (i = 0; i < 10; i++)
         free(mmm[i]);
     return 0;
 }
 
-float angl_zhivotn()
+float angl_zhivotn(char name[20])
 {
     char* slovangl[10] = {"Animals",
                           "Hare",
@@ -229,14 +235,17 @@ float angl_zhivotn()
         if ((!strcmp(mmm[i], slovangl[i])))
             k = k + 1;
     }
-    printf("Верных слов:%d\nНеверные слова:%d\n", k, n);
+    printf("Итак, %s, вот ваш результат:\nВерных слов:%d\nНеверные слова:%d\n",
+           name,
+           k,
+           n);
     printf("Время написания:\nМинуты %d\nСекунды %2.0d \n", min, sec);
     for (i = 0; i < 10; i++)
         free(mmm[i]);
     return 0;
 }
 
-float angl_prilag()
+float angl_prilag(char name[20])
 {
     char* slovangl[10] = {"Big",
                           "Nice",
@@ -306,14 +315,17 @@ float angl_prilag()
         if ((!strcmp(mmm[i], slovangl[i])))
             k = k + 1;
     }
-    printf("Верных слов:%d\nНеверные слова:%d\n", k, n);
+    printf("Итак, %s, вот ваш результат:\nВерных слов:%d\nНеверные слова:%d\n",
+           name,
+           k,
+           n);
     printf("Время написания:\nМинуты %d\nСекунды %2.0d \n", min, sec);
     for (i = 0; i < 10; i++)
         free(mmm[i]);
     return 0;
 }
 
-float nem_prilagat()
+float nem_prilagat(char name[20])
 {
     char* slovanem[10] = {"Gross",
                           "Shon",
@@ -381,14 +393,17 @@ float nem_prilagat()
         if ((!strcmp(mmm[i], slovanem[i])))
             k = k + 1;
     }
-    printf("Верных слов:%d\nНеверные слова:%d\n", k, n);
+    printf("Итак, %s, вот ваш результат:\nВерных слов:%d\nНеверные слова:%d\n",
+           name,
+           k,
+           n);
     printf("Минуты %d\nСекунды %2.0d \n", min, sec);
     for (i = 0; i < 10; i++)
         free(mmm[i]);
     return 0;
 }
 
-float nem_zhivotn()
+float nem_zhivotn(char name[20])
 {
     char* slovanem[10] = {"Tiere",
                           "Hase",
@@ -455,14 +470,17 @@ float nem_zhivotn()
         if ((!strcmp(mmm[i], slovanem[i])))
             k = k + 1;
     }
-    printf("Верных слов:%d\nНеверные слова:%d\n", k, n);
+    printf("Итак, %s, вот ваш результат:\nВерных слов:%d\nНеверные слова:%d\n",
+           name,
+           k,
+           n);
     printf("Минуты %d\nСекунды %2.0d \n", min, sec);
     for (i = 0; i < 10; i++)
         free(mmm[i]);
     return 0;
 }
 
-float angl_lichniy()
+float angl_lichniy(char name[20])
 {
     char* slovangl[8] = {"I", "You", "He", "She", "It", "We", "You", "They"};
     char* slovrus[8] = {"Я", "Ты", "Он", "Она", "Оно", "Мы", "Вы", "Они"};
@@ -516,14 +534,17 @@ float angl_lichniy()
         if ((!strcmp(mmm[i], slovangl[i])))
             k = k + 1;
     }
-    printf("Верных слов:%d\nНеверные слова:%d\n", k, n);
+    printf("Итак, %s, вот ваш результат:\nВерных слов:%d\nНеверные слова:%d\n",
+           name,
+           k,
+           n);
     printf("Время написания:\nМинуты %d\nСекунды %2.0d \n", min, sec);
     for (i = 0; i < 8; i++)
         free(mmm[i]);
     return 0;
 }
 
-float nem_pogoda()
+float nem_pogoda(char name[20])
 {
     char* slovanem[10] = {"Sonne",
                           "Nebel",
@@ -590,14 +611,17 @@ float nem_pogoda()
         if ((!strcmp(mmm[i], slovanem[i])))
             k = k + 1;
     }
-    printf("Верных слов:%d\nНеверные слова:%d\n", k, n);
+    printf("Итак, %s, вот ваш результат:\nВерных слов:%d\nНеверные слова:%d\n",
+           name,
+           k,
+           n);
     printf("Минуты %d\nСекунды %2.0d \n", min, sec);
     for (i = 0; i < 10; i++)
         free(mmm[i]);
     return 0;
 }
 
-float angl_glagol()
+float angl_glagol(char name[20])
 {
     char* slovangl[11] = {"Eat",
                           "Sleep",
@@ -668,14 +692,17 @@ float angl_glagol()
         if ((!strcmp(mmm[i], slovangl[i])))
             k = k + 1;
     }
-    printf("Верных слов:%d\nНеверные слова:%d\n", k, n);
+    printf("Итак, %s, вот ваш результат:\nВерных слов:%d\nНеверные слова:%d\n",
+           name,
+           k,
+           n);
     printf("Время написания:\nМинуты %d\nСекунды %2.0d \n", min, sec);
     for (i = 0; i < 10; i++)
         free(mmm[i]);
     return 0;
 }
 
-float nem_priroda()
+float nem_priroda(char name[20])
 {
     char* slovanem[10] = {"Natur",
                           "Baum",
@@ -742,14 +769,17 @@ float nem_priroda()
         if ((!strcmp(mmm[i], slovanem[i])))
             k = k + 1;
     }
-    printf("Верных слов:%d\nНеверные слова:%d\n", k, n);
+    printf("Итак, %s, вот ваш результат:\nВерных слов:%d\nНеверные слова:%d\n",
+           name,
+           k,
+           n);
     printf("Минуты %d\nСекунды %2.0d \n", min, sec);
     for (i = 0; i < 10; i++)
         free(mmm[i]);
     return 0;
 }
 
-float angl_semiya()
+float angl_semiya(char name[20])
 {
     char* slovangl[11] = {"Mother",
                           "Father",
@@ -825,14 +855,17 @@ float angl_semiya()
         if ((!strcmp(mmm[i], slovangl[i])))
             k = k + 1;
     }
-    printf("Верных слов:%d\nНеверные слова:%d\n", k, n);
+    printf("Итак, %s, вот ваш результат:\nВерных слов:%d\nНеверные слова:%d\n",
+           name,
+           k,
+           n);
     printf("Время написания:\nМинуты %d\nСекунды %2.0d \n", min, sec);
     for (i = 0; i < 11; i++)
         free(mmm[i]);
     return 0;
 }
 
-float nem_edainapitok()
+float nem_edainapitok(char name[20])
 {
     char* slovanem[10] = {"Suppe",
                           "Brod",
@@ -899,14 +932,17 @@ float nem_edainapitok()
         if ((!strcmp(mmm[i], slovanem[i])))
             k = k + 1;
     }
-    printf("Верных слов:%d\nНеверные слова:%d\n", k, n);
+    printf("Итак, %s, вот ваш результат:\nВерных слов:%d\nНеверные слова:%d\n",
+           name,
+           k,
+           n);
     printf("Минуты %d\nСекунды %2.0d \n", min, sec);
     for (i = 0; i < 10; i++)
         free(mmm[i]);
     return 0;
 }
 
-float angl_fructoovosh()
+float angl_fructoovosh(char name[20])
 {
     char* slovangl[10] = {"Apple",
                           "Pumpkin",
@@ -974,14 +1010,17 @@ float angl_fructoovosh()
         if ((!strcmp(mmm[i], slovangl[i])))
             k = k + 1;
     }
-    printf("Верных слов:%d\nНеверные слова:%d\n", k, n);
+    printf("Итак, %s, вот ваш результат:\nВерных слов:%d\nНеверные слова:%d\n",
+           name,
+           k,
+           n);
     printf("Время написания:\nМинуты %d\nСекунды %2.0d \n", min, sec);
     for (i = 0; i < 10; i++)
         free(mmm[i]);
     return 0;
 }
 
-float nem_semiya()
+float nem_semiya(char name[20])
 {
     char* slovanem[10] = {"Vater",
                           "Mutter",
@@ -1048,14 +1087,17 @@ float nem_semiya()
         if ((!strcmp(mmm[i], slovanem[i])))
             k = k + 1;
     }
-    printf("Верных слов:%d\nНеверные слова:%d\n", k, n);
+    printf("Итак, %s, вот ваш результат:\nВерных слов:%d\nНеверные слова:%d\n",
+           name,
+           k,
+           n);
     printf("Минуты %d\nСекунды %2.0d \n", min, sec);
     for (i = 0; i < 10; i++)
         free(mmm[i]);
     return 0;
 }
 
-float nem_zveta()
+float nem_zveta(char name[20])
 {
     char* slovanem[10] = {"Blau",
                           "Hellblau",
@@ -1122,14 +1164,17 @@ float nem_zveta()
         if ((!strcmp(mmm[i], slovanem[i])))
             k = k + 1;
     }
-    printf("Верных слов:%d\nНеверные слова:%d\n", k, n);
+    printf("Итак, %s, вот ваш результат:\nВерных слов:%d\nНеверные слова:%d\n",
+           name,
+           k,
+           n);
     printf("Минуты %d\nСекунды %2.0d \n", min, sec);
     for (i = 0; i < 10; i++)
         free(mmm[i]);
     return 0;
 }
 
-float angl_edainapitok()
+float angl_edainapitok(char name[20])
 {
     char* slovangl[11] = {"Juice",
                           "Porridge",
@@ -1199,14 +1244,17 @@ float angl_edainapitok()
         if ((!strcmp(mmm[i], slovangl[i])))
             k = k + 1;
     }
-    printf("Верных слов:%d\nНеверные слова:%d\n", k, n);
+    printf("Итак, %s, вот ваш результат:\nВерных слов:%d\nНеверные слова:%d\n",
+           name,
+           k,
+           n);
     printf("Время написания:\nМинуты %d\nСекунды %2.0d \n", min, sec);
     for (i = 0; i < 11; i++)
         free(mmm[i]);
     return 0;
 }
 
-float nem_fructoovosh()
+float nem_fructoovosh(char name[20])
 {
     char* slovanem[10] = {"Apfel",
                           "Kurbis",
@@ -1273,14 +1321,17 @@ float nem_fructoovosh()
         if ((!strcmp(mmm[i], slovanem[i])))
             k = k + 1;
     }
-    printf("Верных слов:%d\nНеверные слова:%d\n", k, n);
+    printf("Итак, %s, вот ваш результат:\nВерных слов:%d\nНеверные слова:%d\n",
+           name,
+           k,
+           n);
     printf("Минуты %d\nСекунды %2.0d \n", min, sec);
     for (i = 0; i < 10; i++)
         free(mmm[i]);
     return 0;
 }
 
-float angl_priroda()
+float angl_priroda(char name[20])
 {
     char* slovangl[12] = {"Tree",
                           "Grass",
@@ -1352,14 +1403,17 @@ float angl_priroda()
         if ((!strcmp(mmm[i], slovangl[i])))
             k = k + 1;
     }
-    printf("Верных слов:%d\nНеверные слова:%d\n", k, n);
+    printf("Итак, %s, вот ваш результат:\nВерных слов:%d\nНеверные слова:%d\n",
+           name,
+           k,
+           n);
     printf("Время написания:\nМинуты %d\nСекунды %2.0d \n", min, sec);
     for (i = 0; i < 12; i++)
         free(mmm[i]);
     return 0;
 }
 
-float nem_glagol()
+float nem_glagol(char name[20])
 {
     char* slovanem[10] = {"Leben",
                           "Schlafen",
@@ -1428,14 +1482,17 @@ float nem_glagol()
         if ((!strcmp(mmm[i], slovanem[i])))
             k = k + 1;
     }
-    printf("Верных слов:%d\nНеверные слова:%d\n", k, n);
+    printf("Итак, %s, вот ваш результат:\nВерных слов:%d\nНеверные слова:%d\n",
+           name,
+           k,
+           n);
     printf("Минуты %d\nСекунды %2.0d \n", min, sec);
     for (i = 0; i < 10; i++)
         free(mmm[i]);
     return 0;
 }
 
-float nem_lichniy()
+float nem_lichniy(char name[20])
 {
     char* slovanem[8] = {"Ich", "Du", "Er", "Sie", "Es", "Wir", "Ihr", "Sie"};
     char* slovrus[8] = {"Я", "Ты", "Он", "Она", "Оно", "Мы", "Вы", "Они"};
@@ -1485,24 +1542,28 @@ float nem_lichniy()
         if ((!strcmp(mmm[i], slovanem[i])))
             k = k + 1;
     }
-    printf("Верных слов:%d\nНеверные слова:%d\n", k, n);
+    printf("Итак, %s, вот ваш результат:\nВерных слов:%d\nНеверные слова:%d\n",
+           name,
+           k,
+           n);
     printf("Минуты %d\nСекунды %2.0d \n", min, sec);
     for (i = 0; i < 8; i++)
         free(mmm[i]);
     return 0;
 }
 ///функция англицкий язык///
-float angl()
+float angl(char name[20])
 {
     int razdel;
-    printf("Выберите раздел:\n1.Личные местоимения.\n2.Основные "
+    printf("%s, выберите раздел:\n1.Личные местоимения.\n2.Основные "
            "глаголы\n3.Семья.\n4.Фрукты и "
            "овощи.\n5.Еда и "
            "напитки.\n6.Природа.\n7.Цвета.\n8.Погода.\n9.Животные.\n10."
            "Прилагательные.\n(напишите 0 для выхода)\nЕСЛИ УКАЖЕТЕ НОМЕР, "
            "КОТОРОГО НЕТ В СПИСКЕ "
            "- ПРОГРАММА ЗАКОНЧИТ СВОЮ РАБОТУ\nНапишите номер нужного "
-           "пункта:\n");
+           "пункта:\n",
+           name);
     scanf("%d", &razdel);
     if (razdel == 0) {
         printf("Вот и всё)))\n");
@@ -1521,34 +1582,34 @@ float angl()
            razdel);
     switch (razdel) {
     case 1:
-        angl_lichniy();
+        angl_lichniy(name);
         break;
     case 2:
-        angl_glagol();
+        angl_glagol(name);
         break;
     case 3:
-        angl_semiya();
+        angl_semiya(name);
         break;
     case 4:
-        angl_fructoovosh();
+        angl_fructoovosh(name);
         break;
     case 5:
-        angl_edainapitok();
+        angl_edainapitok(name);
         break;
     case 6:
-        angl_priroda();
+        angl_priroda(name);
         break;
     case 7:
-        angl_zveta();
+        angl_zveta(name);
         break;
     case 8:
-        angl_pogoda();
+        angl_pogoda(name);
         break;
     case 9:
-        angl_zhivotn();
+        angl_zhivotn(name);
         break;
     case 10:
-        angl_prilag();
+        angl_prilag(name);
         break;
     default:
         printf("Ошибочка\n");
@@ -1556,21 +1617,22 @@ float angl()
     }
     printf("Вы закончили раздел №%d, теперь выберите другой или закончите.\n",
            razdel);
-    angl();
+    angl(name);
     return 0;
 }
 /////функция немецкий язык//////
-float nem()
+float nem(char name[20])
 {
     int razdel;
-    printf("Выберите раздел:\n1.Личные местоимения.\n2.Основные "
+    printf("%s, выберите раздел:\n1.Личные местоимения.\n2.Основные "
            "глаголы\n3.Семья.\n4.Фрукты и "
            "овощи.\n5.Еда и "
            "напитки.\n6.Природа.\n7.Цвета.\n8.Погода.\n9.Животные.\n10."
            "Прилагательные.\n(напишите 0 для выхода)\nЕСЛИ УКАЖЕТЕ НОМЕР, "
            "КОТОРОГО НЕТ В СПИСКЕ "
            "- ПРОГРАММА ЗАКОНЧИТ СВОЮ РАБОТУ\nНапишите номер нужного "
-           "пункта:\n");
+           "пункта:\n",
+           name);
     scanf("%d", &razdel);
     if (razdel == 0) {
         printf("Вот и всё)))\n");
@@ -1589,34 +1651,34 @@ float nem()
            razdel);
     switch (razdel) {
     case 1:
-        nem_lichniy();
+        nem_lichniy(name);
         break;
     case 2:
-        nem_glagol();
+        nem_glagol(name);
         break;
     case 3:
-        nem_semiya();
+        nem_semiya(name);
         break;
     case 4:
-        nem_fructoovosh();
+        nem_fructoovosh(name);
         break;
     case 5:
-        nem_edainapitok();
+        nem_edainapitok(name);
         break;
     case 6:
-        nem_priroda();
+        nem_priroda(name);
         break;
     case 7:
-        nem_zveta();
+        nem_zveta(name);
         break;
     case 8:
-        nem_pogoda();
+        nem_pogoda(name);
         break;
     case 9:
-        nem_zhivotn();
+        nem_zhivotn(name);
         break;
     case 10:
-        nem_prilagat();
+        nem_prilagat(name);
         break;
     default:
         printf("Ошибочка\n");
@@ -1624,6 +1686,6 @@ float nem()
     }
     printf("Вы закончили раздел №%d, теперь выберите другой или закончите.\n",
            razdel);
-    nem();
+    nem(name);
     return 0;
 }

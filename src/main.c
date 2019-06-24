@@ -23,11 +23,11 @@ int main()
     switch (yaz) {
     case 1:
         printf("Вы выбрали английский язык.\n");
-        angl();
+        angl(name);
         break;
     case 2:
         printf("Вы выбрали немецкий язык.\n");
-        nem();
+        nem(name);
         break;
     default:
         printf("ERROR\n");

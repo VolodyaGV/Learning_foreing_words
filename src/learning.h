@@ -2,27 +2,27 @@
 #define LEARNING_H
 
 double wtime();
-float angl_zveta();
-float angl_pogoda();
-float angl_zhivotn();
-float angl_prilag();
-float nem_prilagat();
-float nem_zhivotn();
-float angl_lichniy();
-float nem_pogoda();
-float angl_glagol();
-float nem_priroda();
-float angl_semiya();
-float nem_edainapitok();
-float angl_fructoovosh();
-float nem_semiya();
-float nem_zveta();
-float angl_edainapitok();
-float nem_fructoovosh();
-float angl_priroda();
-float nem_glagol();
-float nem_lichniy();
-float angl();
-float nem();
+float angl_zveta(char name[20]);
+float angl_pogoda(char name[20]);
+float angl_zhivotn(char name[20]);
+float angl_prilag(char name[20]);
+float nem_prilagat(char name[20]);
+float nem_zhivotn(char name[20]);
+float angl_lichniy(char name[20]);
+float nem_pogoda(char name[20]);
+float angl_glagol(char name[20]);
+float nem_priroda(char name[20]);
+float angl_semiya(char name[20]);
+float nem_edainapitok(char name[20]);
+float angl_fructoovosh(char name[20]);
+float nem_semiya(char name[20]);
+float nem_zveta(char name[20]);
+float angl_edainapitok(char name[20]);
+float nem_fructoovosh(char name[20]);
+float angl_priroda(char name[20]);
+float nem_glagol(char name[20]);
+float nem_lichniy(char name[20]);
+float angl(char name[20]);
+float nem(char name[20]);
 
 #endif
