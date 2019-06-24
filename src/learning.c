@@ -12,8 +12,45 @@ double wtime()
     return (double)t.tv_sec + (double)t.tv_usec * 1E-6;
 }
 
-float angl_zveta(char name[20])
+int return_min(double tt)
 {
+    if (tt < 0) {
+        return -1;
+    }
+    int min = tt / 60;
+    return min;
+}
+
+int return_sec(double tt, int min)
+{
+    if (tt < 0 || min < 0) {
+        return -1;
+    }
+    int sec = tt - min * 60;
+    return sec;
+}
+
+int check(int i)
+{
+    switch (i) {
+    case 1:
+        return 1;
+    case 2:
+        return 2;
+    default:
+        return -1;
+    }
+}
+
+int angl_zveta(char name[20])
+{
+    if (!name) {
+        return -1;
+    }
+    if (strlen(name) > 20) {
+        // повторите ввод
+        return 1;
+    }
     char* slovangl[10] = {"Blue",
                           "Blue",
                           "Red",
@@ -63,9 +100,8 @@ float angl_zveta(char name[20])
     }
     t2 = wtime();
     double tt = t2 - t1;
-    int min, sec;
-    min = tt / 60;
-    sec = tt - min * 60;
+    int min = return_min(tt);
+    int sec = return_sec(tt, min);
     printf("\nВы ввели данные слова:\n");
     for (i = 0; i < 10; i++) {
         printf("%-8s\t->\tПравильно:%-8s\t = \tПеревод:%-10s\n",
@@ -89,8 +125,15 @@ float angl_zveta(char name[20])
     return 0;
 }
 
-float angl_pogoda(char name[20])
+int angl_pogoda(char name[20])
 {
+    if (!name) {
+        return -1;
+    }
+    if (strlen(name) > 20) {
+        // повторите ввод
+        return 1;
+    }
     char* slovangl[10] = {"Sunny",
                           "Fog",
                           "Rain",
@@ -140,9 +183,8 @@ float angl_pogoda(char name[20])
     }
     t2 = wtime();
     double tt = t2 - t1;
-    int min, sec;
-    min = tt / 60;
-    sec = tt - min * 60;
+    int min = return_min(tt);
+    int sec = return_sec(tt, min);
 
     printf("\nВы ввели данные слова:\n");
     for (i = 0; i < 10; i++) {
@@ -167,8 +209,15 @@ float angl_pogoda(char name[20])
     return 0;
 }
 
-float angl_zhivotn(char name[20])
+int angl_zhivotn(char name[20])
 {
+    if (!name) {
+        return -1;
+    }
+    if (strlen(name) > 20) {
+        // повторите ввод
+        return 1;
+    }
     char* slovangl[10] = {"Animals",
                           "Hare",
                           "Elephant",
@@ -218,9 +267,8 @@ float angl_zhivotn(char name[20])
     }
     t2 = wtime();
     double tt = t2 - t1;
-    int min, sec;
-    min = tt / 60;
-    sec = tt - min * 60;
+    int min = return_min(tt);
+    int sec = return_sec(tt, min);
 
     printf("\nВы ввели данные слова:\n");
     for (i = 0; i < 10; i++) {
@@ -245,8 +293,15 @@ float angl_zhivotn(char name[20])
     return 0;
 }
 
-float angl_prilag(char name[20])
+int angl_prilag(char name[20])
 {
+    if (!name) {
+        return -1;
+    }
+    if (strlen(name) > 20) {
+        // повторите ввод
+        return 1;
+    }
     char* slovangl[10] = {"Big",
                           "Nice",
                           "Bad",
@@ -298,9 +353,8 @@ float angl_prilag(char name[20])
     }
     t2 = wtime();
     double tt = t2 - t1;
-    int min, sec;
-    min = tt / 60;
-    sec = tt - min * 60;
+    int min = return_min(tt);
+    int sec = return_sec(tt, min);
 
     printf("\nВы ввели данные слова:\n");
     for (i = 0; i < 10; i++) {
@@ -325,8 +379,15 @@ float angl_prilag(char name[20])
     return 0;
 }
 
-float nem_prilagat(char name[20])
+int nem_prilagat(char name[20])
 {
+    if (!name) {
+        return -1;
+    }
+    if (strlen(name) > 20) {
+        // повторите ввод
+        return 1;
+    }
     char* slovanem[10] = {"Gross",
                           "Shon",
                           "Schlecht",
@@ -377,9 +438,8 @@ float nem_prilagat(char name[20])
     }
     t2 = wtime();
     double tt = t2 - t1;
-    int min, sec;
-    min = tt / 60;
-    sec = tt - min * 60;
+    int min = return_min(tt);
+    int sec = return_sec(tt, min);
     printf("\nВы ввели данные слова:\n");
     for (i = 0; i < 10; i++) {
         printf("%-8s\t->\tПравильно:%-8s\t = \tПеревод:%-10s\n",
@@ -403,8 +463,15 @@ float nem_prilagat(char name[20])
     return 0;
 }
 
-float nem_zhivotn(char name[20])
+int nem_zhivotn(char name[20])
 {
+    if (!name) {
+        return -1;
+    }
+    if (strlen(name) > 20) {
+        // повторите ввод
+        return 1;
+    }
     char* slovanem[10] = {"Tiere",
                           "Hase",
                           "Elefant",
@@ -454,9 +521,8 @@ float nem_zhivotn(char name[20])
     }
     t2 = wtime();
     double tt = t2 - t1;
-    int min, sec;
-    min = tt / 60;
-    sec = tt - min * 60;
+    int min = return_min(tt);
+    int sec = return_sec(tt, min);
     printf("\nВы ввели данные слова:\n");
     for (i = 0; i < 10; i++) {
         printf("%-8s\t->\tПравильно:%-8s\t = \tПеревод:%-10s\n",
@@ -480,8 +546,15 @@ float nem_zhivotn(char name[20])
     return 0;
 }
 
-float angl_lichniy(char name[20])
+int angl_lichniy(char name[20])
 {
+    if (!name) {
+        return -1;
+    }
+    if (strlen(name) > 20) {
+        // повторите ввод
+        return 1;
+    }
     char* slovangl[8] = {"I", "You", "He", "She", "It", "We", "You", "They"};
     char* slovrus[8] = {"Я", "Ты", "Он", "Она", "Оно", "Мы", "Вы", "Они"};
     int i, n = 0, k = 0;
@@ -517,9 +590,8 @@ float angl_lichniy(char name[20])
     }
     t2 = wtime();
     double tt = t2 - t1;
-    int min, sec;
-    min = tt / 60;
-    sec = tt - min * 60;
+    int min = return_min(tt);
+    int sec = return_sec(tt, min);
 
     printf("\nВы ввели данные слова:\n");
     for (i = 0; i < 8; i++) {
@@ -544,8 +616,15 @@ float angl_lichniy(char name[20])
     return 0;
 }
 
-float nem_pogoda(char name[20])
+int nem_pogoda(char name[20])
 {
+    if (!name) {
+        return -1;
+    }
+    if (strlen(name) > 20) {
+        // повторите ввод
+        return 1;
+    }
     char* slovanem[10] = {"Sonne",
                           "Nebel",
                           "Regen",
@@ -595,9 +674,8 @@ float nem_pogoda(char name[20])
     }
     t2 = wtime();
     double tt = t2 - t1;
-    int min, sec;
-    min = tt / 60;
-    sec = tt - min * 60;
+    int min = return_min(tt);
+    int sec = return_sec(tt, min);
     printf("\nВы ввели данные слова:\n");
     for (i = 0; i < 10; i++) {
         printf("%-8s\t->\tПравильно:%-8s\t = \tПеревод:%-10s\n",
@@ -621,8 +699,15 @@ float nem_pogoda(char name[20])
     return 0;
 }
 
-float angl_glagol(char name[20])
+int angl_glagol(char name[20])
 {
+    if (!name) {
+        return -1;
+    }
+    if (strlen(name) > 20) {
+        // повторите ввод
+        return 1;
+    }
     char* slovangl[11] = {"Eat",
                           "Sleep",
                           "Read",
@@ -675,9 +760,8 @@ float angl_glagol(char name[20])
     }
     t2 = wtime();
     double tt = t2 - t1;
-    int min, sec;
-    min = tt / 60;
-    sec = tt - min * 60;
+    int min = return_min(tt);
+    int sec = return_sec(tt, min);
 
     printf("\nВы ввели данные слова:\n");
     for (i = 0; i < 10; i++) {
@@ -702,8 +786,15 @@ float angl_glagol(char name[20])
     return 0;
 }
 
-float nem_priroda(char name[20])
+int nem_priroda(char name[20])
 {
+    if (!name) {
+        return -1;
+    }
+    if (strlen(name) > 20) {
+        // повторите ввод
+        return 1;
+    }
     char* slovanem[10] = {"Natur",
                           "Baum",
                           "Gras",
@@ -753,9 +844,8 @@ float nem_priroda(char name[20])
     }
     t2 = wtime();
     double tt = t2 - t1;
-    int min, sec;
-    min = tt / 60;
-    sec = tt - min * 60;
+    int min = return_min(tt);
+    int sec = return_sec(tt, min);
     printf("\nВы ввели данные слова:\n");
     for (i = 0; i < 10; i++) {
         printf("%-8s\t->\tПравильно:%-8s\t = \tПеревод:%-10s\n",
@@ -779,8 +869,15 @@ float nem_priroda(char name[20])
     return 0;
 }
 
-float angl_semiya(char name[20])
+int angl_semiya(char name[20])
 {
+    if (!name) {
+        return -1;
+    }
+    if (strlen(name) > 20) {
+        // повторите ввод
+        return 1;
+    }
     char* slovangl[11] = {"Mother",
                           "Father",
                           "Son",
@@ -838,9 +935,8 @@ float angl_semiya(char name[20])
     }
     t2 = wtime();
     double tt = t2 - t1;
-    int min, sec;
-    min = tt / 60;
-    sec = tt - min * 60;
+    int min = return_min(tt);
+    int sec = return_sec(tt, min);
 
     printf("\nВы ввели данные слова:\n");
     for (i = 0; i < 11; i++) {
@@ -865,8 +961,15 @@ float angl_semiya(char name[20])
     return 0;
 }
 
-float nem_edainapitok(char name[20])
+int nem_edainapitok(char name[20])
 {
+    if (!name) {
+        return -1;
+    }
+    if (strlen(name) > 20) {
+        // повторите ввод
+        return 1;
+    }
     char* slovanem[10] = {"Suppe",
                           "Brod",
                           "Milch",
@@ -916,9 +1019,8 @@ float nem_edainapitok(char name[20])
     }
     t2 = wtime();
     double tt = t2 - t1;
-    int min, sec;
-    min = tt / 60;
-    sec = tt - min * 60;
+    int min = return_min(tt);
+    int sec = return_sec(tt, min);
     printf("\nВы ввели данные слова:\n");
     for (i = 0; i < 10; i++) {
         printf("%-8s\t->\tПравильно:%-8s\t = \tПеревод:%-10s\n",
@@ -942,8 +1044,15 @@ float nem_edainapitok(char name[20])
     return 0;
 }
 
-float angl_fructoovosh(char name[20])
+int angl_fructoovosh(char name[20])
 {
+    if (!name) {
+        return -1;
+    }
+    if (strlen(name) > 20) {
+        // повторите ввод
+        return 1;
+    }
     char* slovangl[10] = {"Apple",
                           "Pumpkin",
                           "Tomato",
@@ -993,9 +1102,8 @@ float angl_fructoovosh(char name[20])
     }
     t2 = wtime();
     double tt = t2 - t1;
-    int min, sec;
-    min = tt / 60;
-    sec = tt - min * 60;
+    int min = return_min(tt);
+    int sec = return_sec(tt, min);
 
     printf("\nВы ввели данные слова:\n");
     for (i = 0; i < 10; i++) {
@@ -1020,8 +1128,15 @@ float angl_fructoovosh(char name[20])
     return 0;
 }
 
-float nem_semiya(char name[20])
+int nem_semiya(char name[20])
 {
+    if (!name) {
+        return -1;
+    }
+    if (strlen(name) > 20) {
+        // повторите ввод
+        return 1;
+    }
     char* slovanem[10] = {"Vater",
                           "Mutter",
                           "Eltern",
@@ -1071,9 +1186,8 @@ float nem_semiya(char name[20])
     }
     t2 = wtime();
     double tt = t2 - t1;
-    int min, sec;
-    min = tt / 60;
-    sec = tt - min * 60;
+    int min = return_min(tt);
+    int sec = return_sec(tt, min);
     printf("\nВы ввели данные слова:\n");
     for (i = 0; i < 10; i++) {
         printf("%-8s\t->\tПравильно:%-8s\t = \tПеревод:%-10s\n",
@@ -1097,8 +1211,15 @@ float nem_semiya(char name[20])
     return 0;
 }
 
-float nem_zveta(char name[20])
+int nem_zveta(char name[20])
 {
+    if (!name) {
+        return -1;
+    }
+    if (strlen(name) > 20) {
+        // повторите ввод
+        return 1;
+    }
     char* slovanem[10] = {"Blau",
                           "Hellblau",
                           "Rot",
@@ -1148,9 +1269,8 @@ float nem_zveta(char name[20])
     }
     t2 = wtime();
     double tt = t2 - t1;
-    int min, sec;
-    min = tt / 60;
-    sec = tt - min * 60;
+    int min = return_min(tt);
+    int sec = return_sec(tt, min);
     printf("\nВы ввели данные слова:\n");
     for (i = 0; i < 10; i++) {
         printf("%-8s\t->\tПравильно:%-8s\t = \tПеревод:%-10s\n",
@@ -1174,8 +1294,15 @@ float nem_zveta(char name[20])
     return 0;
 }
 
-float angl_edainapitok(char name[20])
+int angl_edainapitok(char name[20])
 {
+    if (!name) {
+        return -1;
+    }
+    if (strlen(name) > 20) {
+        // повторите ввод
+        return 1;
+    }
     char* slovangl[11] = {"Juice",
                           "Porridge",
                           "Soup",
@@ -1227,9 +1354,8 @@ float angl_edainapitok(char name[20])
     }
     t2 = wtime();
     double tt = t2 - t1;
-    int min, sec;
-    min = tt / 60;
-    sec = tt - min * 60;
+    int min = return_min(tt);
+    int sec = return_sec(tt, min);
 
     printf("\nВы ввели данные слова:\n");
     for (i = 0; i < 11; i++) {
@@ -1254,8 +1380,15 @@ float angl_edainapitok(char name[20])
     return 0;
 }
 
-float nem_fructoovosh(char name[20])
+int nem_fructoovosh(char name[20])
 {
+    if (!name) {
+        return -1;
+    }
+    if (strlen(name) > 20) {
+        // повторите ввод
+        return 1;
+    }
     char* slovanem[10] = {"Apfel",
                           "Kurbis",
                           "Tomaten",
@@ -1305,9 +1438,8 @@ float nem_fructoovosh(char name[20])
     }
     t2 = wtime();
     double tt = t2 - t1;
-    int min, sec;
-    min = tt / 60;
-    sec = tt - min * 60;
+    int min = return_min(tt);
+    int sec = return_sec(tt, min);
     printf("\nВы ввели данные слова:\n");
     for (i = 0; i < 10; i++) {
         printf("%-8s\t->\tПравильно:%-8s\t = \tПеревод:%-10s\n",
@@ -1331,8 +1463,15 @@ float nem_fructoovosh(char name[20])
     return 0;
 }
 
-float angl_priroda(char name[20])
+int angl_priroda(char name[20])
 {
+    if (!name) {
+        return -1;
+    }
+    if (strlen(name) > 20) {
+        // повторите ввод
+        return 1;
+    }
     char* slovangl[12] = {"Tree",
                           "Grass",
                           "Water",
@@ -1386,9 +1525,8 @@ float angl_priroda(char name[20])
     }
     t2 = wtime();
     double tt = t2 - t1;
-    int min, sec;
-    min = tt / 60;
-    sec = tt - min * 60;
+    int min = return_min(tt);
+    int sec = return_sec(tt, min);
 
     printf("\nВы ввели данные слова:\n");
     for (i = 0; i < 12; i++) {
@@ -1413,8 +1551,15 @@ float angl_priroda(char name[20])
     return 0;
 }
 
-float nem_glagol(char name[20])
+int nem_glagol(char name[20])
 {
+    if (!name) {
+        return -1;
+    }
+    if (strlen(name) > 20) {
+        // повторите ввод
+        return 1;
+    }
     char* slovanem[10] = {"Leben",
                           "Schlafen",
                           "Lesen",
@@ -1466,9 +1611,8 @@ float nem_glagol(char name[20])
     }
     t2 = wtime();
     double tt = t2 - t1;
-    int min, sec;
-    min = tt / 60;
-    sec = tt - min * 60;
+    int min = return_min(tt);
+    int sec = return_sec(tt, min);
     printf("\nВы ввели данные слова:\n");
     for (i = 0; i < 10; i++) {
         printf("%-8s\t->\tПравильно:%-8s\t = \tПеревод:%-10s\n",
@@ -1492,8 +1636,15 @@ float nem_glagol(char name[20])
     return 0;
 }
 
-float nem_lichniy(char name[20])
+int nem_lichniy(char name[20])
 {
+    if (!name) {
+        return -1;
+    }
+    if (strlen(name) > 20) {
+        // повторите ввод
+        return 1;
+    }
     char* slovanem[8] = {"Ich", "Du", "Er", "Sie", "Es", "Wir", "Ihr", "Sie"};
     char* slovrus[8] = {"Я", "Ты", "Он", "Она", "Оно", "Мы", "Вы", "Они"};
     int i, n = 0, k = 0;
@@ -1526,9 +1677,8 @@ float nem_lichniy(char name[20])
     }
     t2 = wtime();
     double tt = t2 - t1;
-    int min, sec;
-    min = tt / 60;
-    sec = tt - min * 60;
+    int min = return_min(tt);
+    int sec = return_sec(tt, min);
     printf("\nВы ввели данные слова:\n");
     for (i = 0; i < 8; i++) {
         printf("%-8s\t->\tПравильно:%-8s\t = \tПеревод:%-10s\n",
@@ -1552,7 +1702,7 @@ float nem_lichniy(char name[20])
     return 0;
 }
 ///функция англицкий язык///
-float angl(char name[20])
+int angl(char name[20])
 {
     int razdel;
     printf("%s, выберите раздел:\n1.Личные местоимения.\n2.Основные "
@@ -1621,7 +1771,7 @@ float angl(char name[20])
     return 0;
 }
 /////функция немецкий язык//////
-float nem(char name[20])
+int nem(char name[20])
 {
     int razdel;
     printf("%s, выберите раздел:\n1.Личные местоимения.\n2.Основные "
