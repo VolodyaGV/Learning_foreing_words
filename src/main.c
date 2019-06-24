@@ -20,6 +20,7 @@ int main()
            name);
     printf("Напишите номер нужного пункта.\n");
     scanf("%d", &yaz); //считывает выбранный пункт//
+    yaz = check(yaz);
     switch (yaz) {
     case 1:
         printf("Вы выбрали английский язык.\n");
@@ -30,9 +31,8 @@ int main()
         nem(name);
         break;
     default:
-        printf("ERROR\n");
+        printf("%s, удачи в освоении иностранных языков.\n", name);
         break;
     }
-    printf("%s, удачи в освоении иностранных языков.\n", name);
     return 0;
 }
